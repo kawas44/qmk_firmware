@@ -38,3 +38,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define TAPPING_TERM 280
 
 #define PERMISSIVE_HOLD
+
+/* Configure One-shot */
+
+#define ONESHOT_TAP_TOGGLE 3
+#define ONESHOT_TIMEOUT 3000

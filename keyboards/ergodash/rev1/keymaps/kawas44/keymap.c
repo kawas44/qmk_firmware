@@ -15,9 +15,12 @@ enum custom_keycodes {
 };
 
 #define BSPC_L1 LT(_LOWER, KC_BSPC)
+#define CTL_OSM OSM(MOD_LCTL)
 #define DEL_GUI LGUI_T(KC_DEL)
-#define SPC_L2  LT(_RAISE, KC_SPC)
+
 #define ENT_ALT RALT_T(KC_ENT)
+#define SFT_OSM OSM(MOD_RSFT)
+#define SPC_L2  LT(_RAISE, KC_SPC)
 
 #define ALT_ESC LALT_T(KC_ESC)
 
@@ -33,7 +36,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // |--------+--------+--------+--------+--------+--------+--------+                     +--------+--------+--------+--------+--------+--------+---------|
      KC_GRV , KC_Z   , KC_X   , KC_C   , KC_V   , KC_B   , XXXXXXX,                       XXXXXXX, KC_N   , KC_M   , KC_COMM, KC_DOT,  KC_SLSH, KC_BSLS, \
 // |--------+--------+--------+--------+--------+--------+--------+---------|  |--------+--------+--------+--------+--------+--------+--------+---------|
-     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,          BSPC_L1, KC_LCTL, DEL_GUI,     ENT_ALT, KC_RSFT, SPC_L2          , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX  \
+     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,          BSPC_L1, CTL_OSM, DEL_GUI,     ENT_ALT, SFT_OSM, SPC_L2          , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX  \
 // ,------------------------------------------------------------------------|  |------------------------------------------------------------------------.
   ),
 
@@ -47,7 +50,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // |--------+--------+--------+--------+--------+--------+--------+                     +--------+--------+--------+--------+--------+--------+---------|
      KC_PSCR, KC_F4  , KC_F3  , KC_F2  , KC_F1  , KC_VOLD, XXXXXXX,                       XXXXXXX, KC_HOME, KC_PGDN, KC_PGUP, KC_END,  XXXXXXX, XXXXXXX, \
 // |--------+--------+--------+--------+--------+--------+--------+---------|  |--------+--------+--------+--------+--------+--------+--------+---------|
-     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,          BSPC_L1, KC_LCTL, DEL_GUI,     ENT_ALT, KC_RSFT, SPC_L2          , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX  \
+     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,          BSPC_L1, CTL_OSM, DEL_GUI,     ENT_ALT, SFT_OSM, SPC_L2          , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX  \
 // ,------------------------------------------------------------------------|  |------------------------------------------------------------------------.
   ),
 
@@ -61,7 +64,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // |--------+--------+--------+--------+--------+--------+--------+                     +--------+--------+--------+--------+--------+--------+---------|
      XXXXXXX, KC_PDOT, KC_3   , KC_2   , KC_1   , KC_0   , XXXXXXX,                       XXXXXXX, KC_CIRC, KC_LCBR, KC_RCBR, KC_DLR,  KC_UNDS, KC_PLUS, \
 // |--------+--------+--------+--------+--------+--------+--------+---------|  |--------+--------+--------+--------+--------+--------+--------+---------|
-     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,          BSPC_L1, KC_LCTL, DEL_GUI,     ENT_ALT, KC_RSFT, SPC_L2          , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX  \
+     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,          BSPC_L1, CTL_OSM, DEL_GUI,     ENT_ALT, SFT_OSM, SPC_L2          , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX  \
 // ,------------------------------------------------------------------------|  |------------------------------------------------------------------------.
   ),
 
