@@ -31,3 +31,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MASTER_LEFT
 // #define MASTER_RIGHT
 // #define EE_HANDS
+
+/* Configure Tap-Hold */
+
+#undef TAPPING_TERM
+#define TAPPING_TERM 280
+
+#define PERMISSIVE_HOLD
