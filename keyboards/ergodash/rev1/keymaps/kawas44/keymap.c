@@ -52,7 +52,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // |--------+--------+--------+--------+--------+--------+--------+                     +--------+--------+--------+--------+--------+--------+---------|
      _______, KC_PSLS, KC_9   , KC_8   , KC_7   , KC_PMNS, XXXXXXX,                       XXXXXXX, KC_AT  , KC_LPRN, KC_RPRN, KC_HASH, KC_MINS, KC_EQL , \
 // |--------+--------+--------+--------+--------+--------+--------+                     +--------+--------+--------+--------+--------+--------+---------|
-     _______, KC_PAST, KC_6   , KC_5   , KC_4   , KC_PPLS, XXXXXXX,                       XXXXXXX, KC_EXLM, KC_LBRC, KC_RBRC, KC_PERC, KC_AMPR, KC_ASTR, \
+     _______, KC_PAST, KC_6   , KC_5   , KC_4   , KC_PPLS, XXXXXXX,                       XXXXXXX, KC_EXLM, KC_LBRC, KC_RBRC, KC_PERC, KC_ASTR, KC_AMPR, \
 // |--------+--------+--------+--------+--------+--------+--------+                     +--------+--------+--------+--------+--------+--------+---------|
      XXXXXXX, KC_PDOT, KC_3   , KC_2   , KC_1   , KC_0   , XXXXXXX,                       XXXXXXX, KC_CIRC, KC_LCBR, KC_RCBR, KC_DLR,  KC_UNDS, KC_PLUS, \
 // |--------+--------+--------+--------+--------+--------+--------+---------|  |--------+--------+--------+--------+--------+--------+--------+---------|
