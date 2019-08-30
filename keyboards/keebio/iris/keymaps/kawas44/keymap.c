@@ -3,12 +3,14 @@
 extern keymap_config_t keymap_config;
 
 #define _QWERTY 0
-#define _LOWER 1
-#define _RAISE 2
-#define _ADJUST 3
+#define _COLEMAK 1
+#define _LOWER 2
+#define _RAISE 3
+#define _ADJUST 4
 
 enum custom_keycodes {
   QWERTY = SAFE_RANGE,
+  COLEMAK
 };
 
 #define ALT_GRV LALT_T(KC_GRV)
@@ -38,6 +40,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     CTL_ESC, KC_A   , KC_S   , KC_D   , KC_F   , KC_G   ,                        KC_H   , KC_J   , KC_K   , KC_L   , KC_SCLN, KC_QUOT,
 // ├───────┼────────┼────────┼────────┼────────┼────────┼────────┐    ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
     ALT_GRV, KC_Z   , KC_X   , KC_C   , KC_V   , KC_B   , XXXXXXX,      XXXXXXX, KC_N   , KC_M   , KC_COMM, KC_DOT , KC_SLSH, OS_CTL ,
+// └───────┴────────┴────────┴───┬────┴──┬─────┴──┬─────┴──┬─────┘    └─────┬──┴─────┬──┴─────┬──┴─────┬──┴────────┴────────┴────────┘
+                                  OS_GUI , BSPC_L1, OS_SFT ,                  KC_ENT , SPC_L2 , OS_RALT
+//                               └───────┴────────┴────────┘                └────────┴────────┴────────┘
+  ),
+
+  [_COLEMAK] = LAYOUT(
+// ┌───────┬────────┬────────┬────────┬────────┬────────┐                      ┌────────┬────────┬────────┬────────┬────────┬────────┐
+    XXXXXXX, KC_1   , KC_2   , KC_3   , KC_4   , KC_5   ,                        KC_6   , KC_7   , KC_8   , KC_9   , KC_0   , XXXXXXX,
+// ├───────┼────────┼────────┼────────┼────────┼────────┤                      ├────────┼────────┼────────┼────────┼────────┼────────┤
+    KC_TAB , KC_Q   , KC_W   , KC_F   , KC_P   , KC_B   ,                        KC_J   , KC_L   , KC_U   , KC_Y   , KC_SCLN, KC_MINS,
+// ├───────┼────────┼────────┼────────┼────────┼────────┤                      ├────────┼────────┼────────┼────────┼────────┼────────┤
+    CTL_ESC, KC_A   , KC_R   , KC_S   , KC_T   , KC_G   ,                        KC_K   , KC_N   , KC_E   , KC_I   , KC_O   , KC_QUOT,
+// ├───────┼────────┼────────┼────────┼────────┼────────┼────────┐    ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
+    ALT_GRV, KC_Z   , KC_X   , KC_C   , KC_D   , KC_V   , XXXXXXX,      XXXXXXX, KC_M   , KC_H   , KC_COMM, KC_DOT , KC_SLSH, OS_CTL ,
 // └───────┴────────┴────────┴───┬────┴──┬─────┴──┬─────┴──┬─────┘    └─────┬──┴─────┬──┴─────┬──┴─────┬──┴────────┴────────┴────────┘
                                   OS_GUI , BSPC_L1, OS_SFT ,                  KC_ENT , SPC_L2 , OS_RALT
 //                               └───────┴────────┴────────┘                └────────┴────────┴────────┘
@@ -73,7 +89,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_ADJUST] = LAYOUT(
 // ┌───────┬────────┬────────┬────────┬────────┬────────┐                      ┌────────┬────────┬────────┬────────┬────────┬────────┐
-    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, QWERTY ,                        COLEMAK, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
 // ├───────┼────────┼────────┼────────┼────────┼────────┤                      ├────────┼────────┼────────┼────────┼────────┼────────┤
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
 // ├───────┼────────┼────────┼────────┼────────┼────────┤                      ├────────┼────────┼────────┼────────┼────────┼────────┤
@@ -96,6 +112,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case QWERTY:
       if (record->event.pressed) {
         set_single_persistent_default_layer(_QWERTY);
+      }
+      return false;
+      break;
+    case COLEMAK:
+      if (record->event.pressed) {
+        set_single_persistent_default_layer(_COLEMAK);
       }
       return false;
       break;
