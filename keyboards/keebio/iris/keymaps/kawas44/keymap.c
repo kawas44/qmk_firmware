@@ -72,13 +72,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_RAISE] = LAYOUT(
 // ┌───────┬────────┬────────┬────────┬────────┬────────┐                      ┌────────┬────────┬────────┬────────┬────────┬────────┐
-    XXXXXXX, KC_1   , KC_2   , KC_3   , KC_4   , KC_5   ,                        KC_6   , KC_7   , KC_8   , KC_9   , KC_0   , XXXXXXX,
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
 // ├───────┼────────┼────────┼────────┼────────┼────────┤                      ├────────┼────────┼────────┼────────┼────────┼────────┤
-    KC_PSLS, KC_PMNS, KC_9   , KC_8   , KC_7   , KS_EURO,                        KC_AT  , KC_LPRN, KC_RPRN, KC_HASH, KC_MINS, KC_EQL ,
+    KC_EQL , KC_MINS, KC_HASH, KC_LPRN, KC_RPRN, KC_AT  ,                        KS_EURO, KC_7   , KC_8   , KC_9   , KC_PMNS, KC_PSLS,
 // ├───────┼────────┼────────┼────────┼────────┼────────┤                      ├────────┼────────┼────────┼────────┼────────┼────────┤
-    KC_PAST, KC_PPLS, KC_6   , KC_5   , KC_4   , KC_PDOT,                        KC_EXLM, KC_LBRC, KC_RBRC, KC_PERC, KC_ASTR, KC_AMPR,
+    KC_AMPR, KC_ASTR, KC_PERC, KC_LBRC, KC_RBRC, KC_EXLM,                        KC_PDOT, KC_4   , KC_5   , KC_6   , KC_PPLS, KC_PAST,
 // ├───────┼────────┼────────┼────────┼────────┼────────┼────────┐    ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-    KC_PENT, KC_PEQL, KC_3   , KC_2   , KC_1   , KC_0   , XXXXXXX,      XXXXXXX, KC_CIRC, KC_LCBR, KC_RCBR, KC_DLR , KC_BSLS, XXXXXXX,
+    XXXXXXX, KC_BSLS, KC_CIRC, KC_LCBR, KC_RCBR, KC_DLR , XXXXXXX,      XXXXXXX, KC_0   , KC_1   , KC_2   , KC_3   , KC_PEQL, KC_PENT,
 // └───────┴────────┴────────┴───┬────┴──┬─────┴──┬─────┴──┬─────┘    └─────┬──┴─────┬──┴─────┬──┴─────┬──┴────────┴────────┴────────┘
                                   _______, _______, _______,                  _______, _______, _______
 //                               └───────┴────────┴────────┘                └────────┴────────┴────────┘
