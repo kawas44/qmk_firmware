@@ -37,8 +37,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 /* Configure One-shot */
 
-#define ONESHOT_TAP_TOGGLE 3
-#define ONESHOT_TIMEOUT 2000
+#define ONESHOT_TAP_TOGGLE 2
+#define ONESHOT_TIMEOUT 2500
 
 
 // RGB stuffs
