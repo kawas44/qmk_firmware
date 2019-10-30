@@ -22,14 +22,9 @@ enum custom_keycodes {
 #define OS_LALT OSM(MOD_LALT)
 #define OS_RALT OSM(MOD_RALT)
 
-#define GUI_ESC LGUI_T(KC_ESC)
-#define ALT_GRV LALT_T(KC_GRV)
-#define RALT_QT RALT_T(KC_QUOT)
+#define OS_L1   OSL(_LOWER)
+#define OS_L2   OSL(_RAISE)
 
-#define OSL_L1  OSL(_LOWER)
-#define OSL_L2  OSL(_RAISE)
-
-#define SFT_P   (QK_LSFT | KC_P)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -43,7 +38,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // |-------+--------+--------+--------+--------+--------+--------.    ,--------+--------+--------+--------+--------+--------+--------|
     OS_LALT, KC_Z   , KC_X   , KC_C   , KC_V   , KC_B   , XXXXXXX,      XXXXXXX, KC_N   , KC_M   , KC_COMM, KC_DOT , KC_SLSH, OS_RALT,
 // `-------+--------+--------+--------+--------+--------+--------|    |--------+--------+--------+--------+--------+--------+--------'
-                                        OS_LGUI, OSL_L1 , KC_BSPC,      KC_SPC , OSL_L2 , OS_RCTL
+                                        OS_LGUI, OS_L1  , KC_BSPC,      KC_SPC , OS_L2  , OS_RCTL
 //                                    `--------+--------+--------'    `--------+--------+--------'
   ),
 
@@ -57,7 +52,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // |-------+--------+--------+--------+--------+--------+--------.    ,--------+--------+--------+--------+--------+--------+--------|
     OS_LALT, KC_Z   , KC_X   , KC_C   , KC_V   , KC_B   , XXXXXXX,      XXXXXXX, KC_K   , KC_M   , KC_COMM, KC_DOT , KC_SLSH, OS_RALT,
 // `-------+--------+--------+--------+--------+--------+--------|    |--------+--------+--------+--------+--------+--------+--------'
-                                        OS_LGUI, OSL_L1 , KC_BSPC,      KC_SPC , OSL_L2 , OS_RCTL
+                                        OS_LGUI, OS_L1  , KC_BSPC,      KC_SPC , OS_L2  , OS_RCTL
 //                                    `--------+--------+--------'    `--------+--------+--------'
   ),
 
@@ -104,6 +99,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   )
 };
 
+#ifdef CONSOLE_ENABLE
+void keyboard_post_init_user(void) {
+  debug_enable=true;
+  /* debug_matrix=true; */
+  debug_keyboard=true;
+  /* debug_mouse=true; */
+}
+#endif
 
 layer_state_t layer_state_set_user(layer_state_t state) {
   return update_tri_layer_state(state, _LOWER, _RAISE, _ADJUST);
