@@ -25,6 +25,12 @@ enum custom_keycodes {
 #define OS_L1   OSL(_LOWER)
 #define OS_L2   OSL(_RAISE)
 
+// Define a key to type a COLON ':'
+//   OS set to Colemak, use LSFT(KC_P)
+//   OS set to Qwerty, use KC_COLN
+#define U_COLN  LSFT(KC_P)
+// #define U_COLN KC_COLN
+
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -76,7 +82,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // |-------+--------+--------+--------+--------+--------|                      |--------+--------+--------+--------+--------+--------|
     KC_GRV , KC_TILD, KC_HASH, KC_LPRN, KC_RPRN, KC_AT  ,                        KC_ASTR, KC_7   , KC_8   , KC_9   , KC_MINS, KC_PERC,
 // |-------+--------+--------+--------+--------+--------|                      |--------+--------+--------+--------+--------+--------|
-    KC_AMPR, KC_COLN, KC_UNDS, KC_LBRC, KC_RBRC, KC_EXLM,                        KC_0   , KC_4   , KC_5   , KC_6   , KC_EQL , KC_PENT,
+    KC_AMPR, U_COLN , KC_UNDS, KC_LBRC, KC_RBRC, KC_EXLM,                        KC_0   , KC_4   , KC_5   , KC_6   , KC_EQL , KC_PENT,
 // |-------+--------+--------+--------+--------+--------+--------.    ,--------+--------+--------+--------+--------+--------+--------|
     KC_LT  , KC_GT  , KC_CIRC, KC_LCBR, KC_RCBR, KC_DLR , XXXXXXX,      XXXXXXX, KC_PLUS, KC_1   , KC_2   , KC_3   , KC_SLSH, KC_PDOT,
 // `-------+--------+--------+--------+--------+--------+--------|    |--------+--------+--------+--------+--------+--------+--------'
