@@ -32,6 +32,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define MASTER_RIGHT
 // #define EE_HANDS
 
+/* Configure Tapping Toggle */
+
+#define TAPPING_TOGGLE 3
+
 /* Configure Tap-Hold */
 
 #undef TAPPING_TERM
